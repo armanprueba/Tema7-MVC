@@ -3,11 +3,8 @@
 <label for="titulo">Título:</label>
 <input type="text" name="titulo" required>
 <br>
-<label for="genero">Género:</label>
-<input type="text" name="genero" required>
-<br>
-<label for="precio">Precio:</label>
-<input type="number" name="precio" step="0.01" required>
+<label for="descripcion">Descripción:</label>
+<input type="text" name="descripcion" required>
 <br>
 <button type="submit">Guardar</button>
 </form>

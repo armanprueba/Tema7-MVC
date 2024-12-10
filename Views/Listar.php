@@ -4,16 +4,15 @@
 <tr>
 <th>ID</th>
 <th>Título</th>
-<th>Género</th>
-<th>Precio</th>
-<th>Acciones</th>
+<th>Descripción</th>
+<th>Fecha de creación</th>
 </tr>
 <?php foreach ($videojuegos as $videojuego): ?>
 <tr>
 <td><?= $videojuego['id'] ?></td>
-<td><?= $videojuego['titulo'] ?></td>
-<td><?= $videojuego['genero'] ?></td>
-<td><?= $videojuego['precio'] ?></td>
+<td><?= $videojuego['title'] ?></td>
+<td><?= $videojuego['description'] ?></td>
+<td><?= $videojuego['created_at'] ?></td>
 <td>
 <a href="index.php?action=edit&id=<?= $videojuego['id'] ?>
 ">Editar</a>
