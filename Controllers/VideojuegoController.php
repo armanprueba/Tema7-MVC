@@ -1,5 +1,5 @@
 <?php
-require_once "Models/VideojuegoModel.php";
+require_once "../Models/VideojuegoModel.php";
 class VideojuegoController {
     private $videojuegoModel;
     public function __construct() {
@@ -7,7 +7,7 @@ class VideojuegoController {
     }
     public function index() {
         $videojuegos = $this->videojuegoModel->getAll();
-        require "Views/listar.php";
+        require "Views/Listar.php";
     }
     public function create() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -16,7 +16,7 @@ class VideojuegoController {
             $this->videojuegoModel->save($titulo, $descripcion);
             header("Location: index.php");
         } else {
-            require "Views/create.php";
+            require "Views/Create.php";
         }
     }
     public function edit($id) {if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -27,7 +27,7 @@ class VideojuegoController {
         header("Location: index.php");
         } else {
             $videojuego = $this->videojuegoModel->getById($id);
-            require "Views/edit.php";
+            require "Views/Edit.php";
         }
         }
     public function delete($id) {

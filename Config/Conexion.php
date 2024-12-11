@@ -9,7 +9,7 @@ class Conexion {
     {
         $this->pdo="";
         $this->host = "localhost";
-        $this->nombreBD = "videojuego";
+        $this->nombreBD = "videojuegos";
         $this->usuario = "root";
         $this->password = "";
     }

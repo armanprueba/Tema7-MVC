@@ -1,6 +1,6 @@
 <?php
 
-require_once "Config/Conexion.php";
+require_once "../Config/Conexion.php";
 
 class Videojuego
     {
