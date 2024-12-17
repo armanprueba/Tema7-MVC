@@ -13,7 +13,7 @@ class Videojuego
     public function getAll()
     {
         try{
-            $query = "SELECT * FROM videojuegos";
+            $query = "SELECT * FROM task";
             $registro = $this->pdo->prepare($query);
             $registro->execute();
             return $registro->fetchAll();
@@ -25,7 +25,7 @@ class Videojuego
     public function getById($id)
     {
         try{
-            $query = "SELECT * FROM videojuegos WHERE id = $id";
+            $query = "SELECT * FROM task WHERE id = $id";
             $registro = $this->pdo->prepare($query);
             $registro->execute();
             return $registro->fetch();
@@ -36,7 +36,7 @@ class Videojuego
     public function delete($d)
     {
         try{
-            $insercion = $this->pdo->prepare("delete from videojuegos where
+            $insercion = $this->pdo->prepare("delete from task where
             id=:id");
             $insercion->bindParam(':id', $d);
             return $insercion->execute();
@@ -48,7 +48,7 @@ class Videojuego
     public function edit($i,$t,$d)
     {
         try{
-            $insercion = $this->pdo->prepare("update videojuegos set title=:
+            $insercion = $this->pdo->prepare("update task set title=:
             titulo, descripction=:descripcion where id=:id");
             $insercion->bindParam(':id', $i);
             $insercion->bindParam(':titulo', $t);
@@ -63,8 +63,8 @@ class Videojuego
     public function save($t,$d)
     {
         try{
-            $insercion = $this->pdo->prepare("INSERT INTO videojuegos(title, 
-            description) VALUES(:titulo, :descripcion, :precio)");
+            $insercion = $this->pdo->prepare("INSERT INTO task(title, 
+            description) VALUES(:titulo, :descripcion)");
             $insercion->bindParam(':titulo', $t);
             $insercion->bindParam(':descripcion', $d);
             return $insercion->execute();
@@ -73,8 +73,8 @@ class Videojuego
             die($e->getMessage());
         }
         }
-        public function update($id, $titulo, $descripcion, $precio) {
-            $query = "UPDATE videojuegos SET title = :titulo, description = :descripcion WHERE id = :id";
+        public function update($id, $titulo, $descripcion) {
+            $query = "UPDATE task SET title = :titulo, description = :descripcion WHERE id = :id";
             $insercion = $this->pdo->prepare($query);
             $insercion->bindParam(":id", $id);
             $insercion->bindParam(":titulo", $titulo);

@@ -18,7 +18,7 @@
     <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
-   <div class="row">
+   				<div class="row">
                     <div class="col-sm-8"><h2>Agregar <b>Videojuego</b></h2></div>
 
                 </div>
